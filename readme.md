@@ -21,18 +21,18 @@ If you would like to contribute to the CubeKrowed Skyblock project, follow these
 
 ```json
 "islandname": {
-        "publicItems": [ "Carrots", "Potatos" ], //free items
+        "publicItems": [ "Carrots", "potatoes" ], //free items
         "trades": [
             {
                 "villager_name": "Farmer",
                 "give": "Carrots", //what you give the viliger
-                "get": "Potatos", //what does the player get
+                "get": "potatoes", //what does the player get
                 "receiveamount": 1, //how much does the player get
                 "giveamount": 5  //how much does the player give
             },
             {
                 "villager_name": "bob",  //second trade
-                "give": "Potatos",
+                "give": "potatoes",
                 "get": "Carrots",
                 "receiveamount": 1,
                 "giveamount": 5
@@ -41,12 +41,12 @@ If you would like to contribute to the CubeKrowed Skyblock project, follow these
         "sell": [
             {
                 "item": "Carrots", //what the island owner gets
-                "itemrecieve": "Potatos", //what the player gets
+                "itemrecieve": "potatoes", //what the player gets
                 "price": 1 //how much does the island owner charge
 
             },
             {
-                "item": "Potatos",
+                "item": "potatoes",
                 "itemrecieve": "Carrots",
                 "price": 1
 

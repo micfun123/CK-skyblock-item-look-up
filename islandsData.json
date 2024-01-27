@@ -1,17 +1,17 @@
 {
     "island1": {
-        "publicItems": [ "Carrots", "Potatos" ],
+        "publicItems": [ "Carrots", "potatoes" ],
         "trades": [
             {
                 "villager_name": "Farmer",
                 "give": "Carrots",
-                "get": "Potatos",
+                "get": "potatoes",
                 "receiveamount": 1,
                 "giveamount": 5
             },
             {
                 "villager_name": "bob",
-                "give": "Potatos",
+                "give": "potatoes",
                 "get": "Carrots",
                 "receiveamount": 1,
                 "giveamount": 5
@@ -20,12 +20,12 @@
         "sell": [
             {
                 "item": "Carrots",
-                "itemrecieve": "Potatos",
+                "itemrecieve": "potatoes",
                 "price": 1
 
             },
             {
-                "item": "Potatos",
+                "item": "potatoes",
                 "itemrecieve": "Carrots",
                 "price": 1
 
@@ -33,18 +33,18 @@
         ]
   },
     "island2": {
-        "publicItems": [ "Carrots", "Potatos" ],
+        "publicItems": [ "Carrots", "potatoes" ],
         "trades": [
             {
                 "villager_name": "Farmer",
                 "give": "Carrots",
-                "get": "Potatos",
+                "get": "potatoes",
                 "receiveamount": 1,
                 "giveamount": 5
             },
             {
                 "villager_name": "bob",
-                "give": "Potatos",
+                "give": "potatoes",
                 "get": "Carrots",
                 "receiveamount": 1,
                 "giveamount": 5
@@ -53,12 +53,12 @@
         "sell": [
             {
                 "item": "Carrots",
-                "itemrecieve": "Potatos",
+                "itemrecieve": "potatoes",
                 "price": 1
 
             },
             {
-                "item": "Potatos",
+                "item": "potatoes",
                 "itemrecieve": "Carrots",
                 "price": 1
 
