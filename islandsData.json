@@ -79,6 +79,15 @@
     ],
     "sell": [
     ]
+  },
+  "capitaineminus": {
+    "publicItems": [
+      "Baked Potatoes"
+    ],
+    "trades": [
+    ],
+    "sell": [
+    ]
   }
   
 }
