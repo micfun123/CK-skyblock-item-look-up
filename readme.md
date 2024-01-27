@@ -17,6 +17,45 @@ If you would like to contribute to the CubeKrowed Skyblock project, follow these
   - Make a pull request
   - I will verify it and accept the pull request
 
+### Example Island
+
+```json
+"islandname": {
+        "publicItems": [ "Carrots", "Potatos" ], //free items
+        "trades": [
+            {
+                "villager_name": "Farmer",
+                "give": "Carrots", //what you give the viliger
+                "get": "Potatos", //what does the player get
+                "receiveamount": 1, //how much does the player get
+                "giveamount": 5  //how much does the player give
+            },
+            {
+                "villager_name": "bob",  //second trade
+                "give": "Potatos",
+                "get": "Carrots",
+                "receiveamount": 1,
+                "giveamount": 5
+            }
+        ],
+        "sell": [
+            {
+                "item": "Carrots", //what the island owner gets
+                "itemrecieve": "Potatos", //what the player gets
+                "price": 1 //how much does the island owner charge
+
+            },
+            {
+                "item": "Potatos",
+                "itemrecieve": "Carrots",
+                "price": 1
+
+            }
+        ]
+  },
+
+```
+
 ## Acknowledgments
 Special thanks to the CubeKrowed community.
 
