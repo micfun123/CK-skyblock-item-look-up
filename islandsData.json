@@ -64,6 +64,22 @@
 
             }
         ]
+  },
+  "WorldIllustion": {
+    "publicItems": [
+      "Wood",
+      "Stone",
+      "Smooth Stone",
+      "Cobblestone",
+      "gravel",
+      "basalt",
+      "Shulker Shell"
+    ],
+    "trades": [
+    ],
+    "sell": [
+    ]
   }
+  
 }
   

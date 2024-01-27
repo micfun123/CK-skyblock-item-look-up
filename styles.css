@@ -2,6 +2,9 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -11,6 +14,7 @@ body {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
 }
 
 header {
@@ -65,4 +69,11 @@ p {
 
 .sell-info {
     color: #007bff;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
 }

@@ -16,25 +16,32 @@ async function search() {
             const islandData = data;
             const trades = islandData.trades.filter(trade => trade.get.toLowerCase() === itemToSearch);
             const sells = islandData.sell.filter(sell => sell.itemrecieve.toLowerCase() === itemToSearch);
-            return trades.length > 0 || sells.length > 0;
+            const publicItems = islandData.publicItems.map(item => item.toLowerCase());
+            const isItemPublic = publicItems.includes(itemToSearch.toLowerCase());
+            return trades.length > 0 || sells.length > 0 || isItemPublic;
         })
-        
         .map(([island, data]) => {
             const islandData = data;
             const trades = islandData.trades
                 .filter(trade => trade.get.toLowerCase() === itemToSearch)
                 .map(trade => `<span class="trade-info">${trade.villager_name} offers ${trade.giveamount} ${trade.give} for ${trade.receiveamount} ${trade.get}</span>`);
-        
+
             const sells = islandData.sell
                 .filter(sell => sell.itemrecieve.toLowerCase() === itemToSearch)
                 .map(sell => `<span class="sell-info">${sell.price} ${sell.item}</span> can be sold for <span class="sell-info">${sell.itemrecieve}</span>`);
-        
+
             const publicItems = islandData.publicItems.map(item => item.toLowerCase());
-            const isItemPublic = publicItems.includes(itemToSearch);
-        
-            const publicItemsInfo = isItemPublic ? `<span class="sell-info">${itemToSearch}</span> are available in a public area` : '';
-        
-            return `<p>${island} Trades: ${trades.join('. ')}<br>Sells: ${sells.join(', ')}. <br> ${publicItemsInfo}</p>`;
+            const isItemPublic = publicItems.includes(itemToSearch.toLowerCase());
+            const publicItemsInfo = isItemPublic ? `<span class="sell-info">${itemToSearch}</span> is available in a public area` : '';
+
+            // Display results dont show empty arrays or empty strings
+            return `<div class="island">
+                        <h2>${island}</h2>
+                        ${trades.length > 0 ? trades.join('') : ''}
+                        ${sells.length > 0 ? sells.join('') : ''}
+                        ${publicItemsInfo}
+                    </div>`;
+            
         });
 
     // Display results
