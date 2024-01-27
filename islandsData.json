@@ -1,0 +1,69 @@
+{
+    "island1": {
+        "publicItems": [ "Carrots", "Potatos" ],
+        "trades": [
+            {
+                "villager_name": "Farmer",
+                "give": "Carrots",
+                "get": "Potatos",
+                "receiveamount": 1,
+                "giveamount": 5
+            },
+            {
+                "villager_name": "bob",
+                "give": "Potatos",
+                "get": "Carrots",
+                "receiveamount": 1,
+                "giveamount": 5
+            }
+        ],
+        "sell": [
+            {
+                "item": "Carrots",
+                "itemrecieve": "Potatos",
+                "price": 1
+
+            },
+            {
+                "item": "Potatos",
+                "itemrecieve": "Carrots",
+                "price": 1
+
+            }
+        ]
+  },
+    "island2": {
+        "publicItems": [ "Carrots", "Potatos" ],
+        "trades": [
+            {
+                "villager_name": "Farmer",
+                "give": "Carrots",
+                "get": "Potatos",
+                "receiveamount": 1,
+                "giveamount": 5
+            },
+            {
+                "villager_name": "bob",
+                "give": "Potatos",
+                "get": "Carrots",
+                "receiveamount": 1,
+                "giveamount": 5
+            }
+        ],
+        "sell": [
+            {
+                "item": "Carrots",
+                "itemrecieve": "Potatos",
+                "price": 1
+
+            },
+            {
+                "item": "Potatos",
+                "itemrecieve": "Carrots",
+                "price": 1
+
+            }
+        ]
+  }
+}
+  
