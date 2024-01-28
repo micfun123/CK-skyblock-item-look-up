@@ -14,7 +14,7 @@ async function search() {
     const results = Object.entries(islandsData)
         .filter(([island, data]) => {
             const islandData = data;
-            const trades = islandData.trades.filter(trade => trade.get.toLowerCase() === itemToSearch);
+            const trades = islandData.trades.filter(trade => trade.give.toLowerCase() === itemToSearch);
             const sells = islandData.sell.filter(sell => sell.itemrecieve.toLowerCase() === itemToSearch);
             const publicItems = islandData.publicItems.map(item => item.toLowerCase());
             const isItemPublic = publicItems.includes(itemToSearch.toLowerCase());
@@ -24,7 +24,7 @@ async function search() {
             const islandData = data;
             const trades = islandData.trades
                 .filter(trade => trade.get.toLowerCase() === itemToSearch)
-                .map(trade => `<span class="trade-info">${trade.villager_name} offers ${trade.giveamount} ${trade.give} for ${trade.receiveamount} ${trade.get}</span>`);
+                .map(trade => `<span class="trade-info">${trade.villager_name} will sell you ${trade.receiveamount} ${trade.get} for ${trade.giveamount} ${trade.give} </span>`);
 
             const sells = islandData.sell
                 .filter(sell => sell.itemrecieve.toLowerCase() === itemToSearch)
