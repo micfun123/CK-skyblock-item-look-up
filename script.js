@@ -10,41 +10,36 @@ async function search() {
     // Clear previous results
     resultsDiv.innerHTML = '';
 
-    // Convert islandData to an array for fuzzy search
+    // Convert islandData to an array for exact search
     const dataArray = Object.entries(islandsData).map(([island, data]) => ({ island, data }));
 
-    // Create a new Fuse instance with options
-    const fuse = new Fuse(dataArray, {
-        keys: ['data.trades.get', 'data.sell.itemrecieve', 'data.publicItems'],
-        includeScore: true,
-        threshold: 0.1, // Adjust the threshold as needed
-    });
+    // Perform the exact search
+    const searchResults = dataArray.filter(({ data }) => {
+        const islandData = data;
 
-    // Perform the fuzzy search
-    const searchResults = fuse.search(itemToSearch);
+        // Check if the specified item is present in trades, sells, or public items
+        const trades = islandData.trades.some(trade => pluralize(trade.get.toLowerCase()) === itemToSearch || pluralize(trade.get.toLowerCase()) === pluralize(itemToSearch));
+        const sells = islandData.sell.some(sell => pluralize(sell.itemrecieve.toLowerCase()) === itemToSearch || pluralize(sell.itemrecieve.toLowerCase()) === pluralize(itemToSearch));
+        const publicItems = islandData.publicItems.some(item => pluralize(item.toLowerCase()) === itemToSearch || pluralize(item.toLowerCase()) === pluralize(itemToSearch));
+
+        return trades || sells || publicItems;
+    });
 
     // Display results
     const results = searchResults
-        .filter(result => result.score < 0.1) // Adjust the threshold here as well
-        .map(({ item, score }) => {
-            const islandData = item.data;
+        .map(({ island, data }) => {
+            const islandData = data;
+
+            // Filter trades where you receive the specified item
             const trades = islandData.trades
+                .filter(trade => pluralize(trade.get.toLowerCase()) === itemToSearch || pluralize(trade.get.toLowerCase()) === pluralize(itemToSearch))
                 .map(trade => `<span class="trade-info">${trade.villager_name} will sell you ${trade.receiveamount} ${trade.get} for ${trade.giveamount} ${trade.give} </span>`);
 
-            const sells = islandData.sell
-                .map(sell => `<span class="sell-info">${sell.price} ${sell.item}</span> can be sold for <span class="sell-info">${sell.itemrecieve}</span>`);
-
-            const publicItems = islandData.publicItems.map(item => `<span class="sell-info">${item}</span>`);
-            const publicItemsInfo = publicItems.length > 0 ? publicItems.join(' is available in a public area, ') + ' is available in a public area' : '';
-
             // Display results, don't show empty arrays or empty strings
-            return `<div class="island">
-                        <h2>${item.island}</h2>
-                        <h3>
-                        ${trades.length > 0 ? trades.join('') : ''}
-                        ${sells.length > 0 ? sells.join('') : ''}
-                        ${publicItemsInfo}</h3>
-                    </div>`;
+            return trades.length > 0 ? `<div class="island">
+                                            <h2>${island}</h2>
+                                            <h3>${trades.join('')}</h3>
+                                        </div>` : '';
         });
 
     // Display search results

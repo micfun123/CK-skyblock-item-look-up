@@ -97,6 +97,25 @@
     ],
     "sell": [
     ]
+  },
+  "TallPup": {
+    "publicItems": [],
+    "trades": [
+        {
+            "villager_name": "Fletcher",
+            "give": "string",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 20
+        },{
+            "villager_name": "Fletcher",
+            "give": "Emeralds",
+            "get": "arrow",
+            "receiveamount": 9,
+            "giveamount": 1
+        }
+    ],
+    "sell": []
   }
   
 }
