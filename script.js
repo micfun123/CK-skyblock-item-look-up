@@ -15,7 +15,7 @@ async function search() {
 
     // Create a new Fuse instance with options
     const fuse = new Fuse(dataArray, {
-        keys: ['data.trades.give', 'data.sell.itemrecieve', 'data.publicItems'],
+        keys: ['data.trades.get', 'data.sell.itemrecieve', 'data.publicItems'],
         includeScore: true,
         threshold: 0.1, // Adjust the threshold as needed
     });
@@ -40,17 +40,13 @@ async function search() {
             // Display results, don't show empty arrays or empty strings
             return `<div class="island">
                         <h2>${item.island}</h2>
+                        <h3>
                         ${trades.length > 0 ? trades.join('') : ''}
                         ${sells.length > 0 ? sells.join('') : ''}
-                        ${publicItemsInfo}
+                        ${publicItemsInfo}</h3>
                     </div>`;
         });
 
     // Display search results
     resultsDiv.innerHTML = results.length === 0 ? '<p>No results found.</p>' : results.join('');
 }
-
-// Initial display of all islands when the page loads
-window.onload = async function () {
-    await search();
-};
