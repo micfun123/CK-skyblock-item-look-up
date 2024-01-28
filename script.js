@@ -1,7 +1,7 @@
 async function search() {
     const itemInput = document.getElementById('itemInput');
     const resultsDiv = document.getElementById('results');
-    const itemToSearch = itemInput.value.toLowerCase();
+    const itemToSearch = itemInput.value.trim().toLowerCase();
 
     // Load data from JSON file
     const response = await fetch('islandsData.json');
@@ -10,40 +10,47 @@ async function search() {
     // Clear previous results
     resultsDiv.innerHTML = '';
 
-    // Search through the data
-    const results = Object.entries(islandsData)
-        .filter(([island, data]) => {
-            const islandData = data;
-            const trades = islandData.trades.filter(trade => trade.give.toLowerCase() === itemToSearch);
-            const sells = islandData.sell.filter(sell => sell.itemrecieve.toLowerCase() === itemToSearch);
-            const publicItems = islandData.publicItems.map(item => item.toLowerCase());
-            const isItemPublic = publicItems.includes(itemToSearch.toLowerCase());
-            return trades.length > 0 || sells.length > 0 || isItemPublic;
-        })
-        .map(([island, data]) => {
-            const islandData = data;
+    // Convert islandData to an array for fuzzy search
+    const dataArray = Object.entries(islandsData).map(([island, data]) => ({ island, data }));
+
+    // Create a new Fuse instance with options
+    const fuse = new Fuse(dataArray, {
+        keys: ['data.trades.give', 'data.sell.itemrecieve', 'data.publicItems'],
+        includeScore: true,
+        threshold: 0.1, // Adjust the threshold as needed
+    });
+
+    // Perform the fuzzy search
+    const searchResults = fuse.search(itemToSearch);
+
+    // Display results
+    const results = searchResults
+        .filter(result => result.score < 0.1) // Adjust the threshold here as well
+        .map(({ item, score }) => {
+            const islandData = item.data;
             const trades = islandData.trades
-                .filter(trade => trade.get.toLowerCase() === itemToSearch)
                 .map(trade => `<span class="trade-info">${trade.villager_name} will sell you ${trade.receiveamount} ${trade.get} for ${trade.giveamount} ${trade.give} </span>`);
 
             const sells = islandData.sell
-                .filter(sell => sell.itemrecieve.toLowerCase() === itemToSearch)
                 .map(sell => `<span class="sell-info">${sell.price} ${sell.item}</span> can be sold for <span class="sell-info">${sell.itemrecieve}</span>`);
 
-            const publicItems = islandData.publicItems.map(item => item.toLowerCase());
-            const isItemPublic = publicItems.includes(itemToSearch.toLowerCase());
-            const publicItemsInfo = isItemPublic ? `<span class="sell-info">${itemToSearch}</span> is available in a public area` : '';
+            const publicItems = islandData.publicItems.map(item => `<span class="sell-info">${item}</span>`);
+            const publicItemsInfo = publicItems.length > 0 ? publicItems.join(' is available in a public area, ') + ' is available in a public area' : '';
 
-            // Display results dont show empty arrays or empty strings
+            // Display results, don't show empty arrays or empty strings
             return `<div class="island">
-                        <h2>${island}</h2>
+                        <h2>${item.island}</h2>
                         ${trades.length > 0 ? trades.join('') : ''}
                         ${sells.length > 0 ? sells.join('') : ''}
                         ${publicItemsInfo}
                     </div>`;
-            
         });
 
-    // Display results
+    // Display search results
     resultsDiv.innerHTML = results.length === 0 ? '<p>No results found.</p>' : results.join('');
 }
+
+// Initial display of all islands when the page loads
+window.onload = async function () {
+    await search();
+};
