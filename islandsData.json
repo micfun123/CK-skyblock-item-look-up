@@ -113,6 +113,18 @@
             "get": "arrow",
             "receiveamount": 9,
             "giveamount": 1
+        },{
+            "villager_name": "Fletcher",
+            "give": "Emeralds",
+            "get": "bow",
+            "receiveamount": 1,
+            "giveamount": 3
+        },{
+            "villager_name": "Fletcher",
+            "give": "gravel",
+            "get": "flint",
+            "receiveamount": 6,
+            "giveamount": 10
         }
     ],
     "sell": []
