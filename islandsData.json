@@ -73,7 +73,9 @@
       "Cobblestone",
       "gravel",
       "basalt",
-      "Shulker Shell"
+      "Shulker Shell",
+      "Bone Meal",
+      "Charcoal"
     ],
     "trades": [
     ],
@@ -106,7 +108,7 @@
             "give": "string",
             "get": "Emeralds",
             "receiveamount": 1,
-            "giveamount": 20
+            "giveamount": 14
         },{
             "villager_name": "Fletcher",
             "give": "Emeralds",
@@ -125,7 +127,101 @@
             "get": "flint",
             "receiveamount": 6,
             "giveamount": 10
+        },{
+            "villager_name": "Fletcher",
+            "give": "Feather",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 24
+        },{
+            "villager_name": "Fletcher",
+            "give": "Emeralds",
+            "get": "Arrow of Weakness",
+            "receiveamount": 5,
+            "giveamount": 2
         }
+        ,{
+            "villager_name": "Fletcher",
+            "give": "Emeralds",
+            "get": "Crossbow",
+            "receiveamount": 5,
+            "giveamount": 3
+        },{
+            "villager_name": "Fletcher",
+            "give": "Emeralds",
+            "get": "Arrow of Leaping",
+            "receiveamount": 5,
+            "giveamount": 2
+        }
+        ,{
+            "villager_name": "Fletcher",
+            "give": "Emeralds",
+            "get": "Arrow of the Turtle Master",
+            "receiveamount": 5,
+            "giveamount": 2
+        },{
+            "villager_name": "journeyman",
+            "give": "clay",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 10
+        },{
+            "villager_name": "journeyman",
+            "give": "Emeralds",
+            "get": "Brick",
+            "receiveamount": 10,
+            "giveamount": 1
+        },{
+            "villager_name": "journeyman",
+            "give": "stone",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 20
+        },{
+            "villager_name": "journeyman",
+            "give": "Emeralds",
+            "get": "chiseled Stone Bricks",
+            "receiveamount": 4,
+            "giveamount": 1
+        },{
+            "villager_name": "journeyman",
+            "give": "Emeralds",
+            "get": "DripStone Block",
+            "receiveamount": 4,
+            "giveamount": 1
+        },{
+            "villager_name": "journeyman",
+            "give": "Emeralds",
+            "get": "Polished Diorite",
+            "receiveamount": 4,
+            "giveamount": 1
+        },{
+            "villager_name": "journeyman",
+            "give": "Emeralds",
+            "get": "Orange Terracotta",
+            "receiveamount": 1,
+            "giveamount": 1
+        },{
+            "villager_name": "journeyman",
+            "give": "Emeralds",
+            "get": "Quartz Block",
+            "receiveamount": 1,
+            "giveamount": 1
+        },{
+            "villager_name": "journeyman",
+            "give": "Emeralds",
+            "get": "Quartz Pillar",
+            "receiveamount": 1,
+            "giveamount": 1
+        },{
+            "villager_name": "journeyman",
+            "give": "Emeralds",
+            "get": "Yellow glazed Terracotta",
+            "receiveamount": 1,
+            "giveamount": 1
+        }
+
+
     ],
     "sell": []
   }

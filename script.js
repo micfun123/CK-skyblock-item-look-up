@@ -22,10 +22,10 @@ async function search() {
     const fuse = new Fuse(dataArray, {
         keys: ['data.trades.get', 'data.sell.itemrecieve', 'data.publicItems'],
         includeScore: true,
-        threshold: 0.5,
+        threshold: 0.4,
         ignoreFieldNorm: true,
         useExtendedSearch: true,
-        minMatchCharLength: 2,
+        minMatchCharLength: 3,
         findAllMatches: true,
         isCaseSensitive: false,
         includeMatches: true,
@@ -46,7 +46,7 @@ async function search() {
     const searchResults = fuse.search(itemToSearch);
 
     // Filter out results with a score higher than the threshold
-    const filteredResults = searchResults.filter(result => result.score <= 0.3);
+    const filteredResults = searchResults.filter(({ score }) => score <= 0.3);
 
 
     // Display results
@@ -57,7 +57,7 @@ async function search() {
 
             const trades = islandData.trades
                 .filter(trade => normalizeString(trade.get).includes(itemToSearch) || normalizeString(trade.get) === normalizeString(itemToSearch))
-                .map(trade => `<span class="trade-info">${trade.villager_name} will sell you ${trade.receiveamount} ${trade.get} for ${trade.giveamount} ${trade.give}</span>`);
+                .map(trade => `<span class="trade-info">${trade.villager_name} will sell you ${trade.receiveamount} ${trade.get} for ${trade.giveamount} ${trade.give} </span>`);
 
 
             const sells = islandData.sell
@@ -70,7 +70,7 @@ async function search() {
                 .map(item => `<span class="trade-info"><br>${item} is available for free</span>`);
             
 
-            return `<div class="island-info"><h2>${island}</h2>${trades.join('')}${sells.join('')}${publicItems.join('')}</div>`;
+            return `<div class="island-info"><h2>${island}</h2>${trades.join('<br> ')}<br>${sells.join('<br> ')}<br>${publicItems.join('<br> ')}</div>`;
         });
 
     // Display search results
