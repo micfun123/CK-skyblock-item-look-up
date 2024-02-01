@@ -219,6 +219,19 @@
             "get": "Yellow glazed Terracotta",
             "receiveamount": 1,
             "giveamount": 1
+        },{
+            "villager_name": "Fisherman",
+            "give": "Coal",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 10
+        }
+        ,{
+            "villager_name": "Fisherman",
+            "give": "Emeralds",
+            "get": "Campfire",
+            "receiveamount": 1,
+            "giveamount": 2
         }
 
 

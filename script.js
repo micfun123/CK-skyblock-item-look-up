@@ -23,14 +23,12 @@ async function search() {
         keys: ['data.trades.get', 'data.sell.itemrecieve', 'data.publicItems'],
         includeScore: true,
         threshold: 0.4,
-        ignoreFieldNorm: true,
-        useExtendedSearch: true,
-        minMatchCharLength: 3,
-        findAllMatches: true,
-        isCaseSensitive: false,
-        includeMatches: true,
-        shouldSort: true,
-        includeScore: true,
+        ignoreFieldNorm: true, // Ignore field length when scoring (i.e. treat "a" and "ab" as equally close)
+        findAllMatches: true, // Search everywhere in the text, not just at the beginning
+        isCaseSensitive: false, // Don't care about case
+        includeMatches: true, // Include the matches in the result
+        shouldSort: true, // Sort the results by score
+        tokenize: true, // Split the search query into individual search terms 
         keys: [
             {
                 name: 'data.trades.get'
