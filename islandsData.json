@@ -233,6 +233,69 @@
             "receiveamount": 1,
             "giveamount": 2
         }
+        ,{
+            "villager_name": "Fisherman",
+            "give": "Raw Cod and 1 Emerald",
+            "get": "cooked cod",
+            "receiveamount": 6,
+            "giveamount": 6
+        },{
+            "villager_name": "Fisherman",
+            "give": "Raw Salmon and 1 Emerald",
+            "get": "cooked Salmon",
+            "receiveamount": 6,
+            "giveamount": 6
+        },{
+            "villager_name": "Fisherman",
+            "give": "Raw Salmon",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 13
+        },{
+            "villager_name": "Fisherman",
+            "give": "Emeralds",
+            "get": "fishing rod",
+            "receiveamount": 1,
+            "giveamount": 16
+        },{
+            "villager_name": "Fisherman",
+            "give": "Tropical Fish",
+            "get": "Emeralds",
+            "receiveamount": 6,
+            "giveamount": 1
+        },{
+            "villager_name": "Fisherman",
+            "give": "Pufferfish",
+            "get": "Emeralds",
+            "receiveamount": 4,
+            "giveamount": 1
+        },{
+            "villager_name": "Fisherman",
+            "give": "Oak Boat",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 1
+        },{
+            "villager_name": "Fisherman",
+            "give": "String",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 15
+        }
+        ,{
+            "villager_name": "Tool Smith",
+            "give": "diamond",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 3
+        },{
+            "villager_name": "Tool Smith",
+            "give": "Emerald ",
+            "get": "diamond pickaxe",
+            "receiveamount": 1,
+            "giveamount": 13
+        }
+
 
 
     ],
