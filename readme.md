@@ -68,3 +68,7 @@ Special thanks to the CubeKrowed community.
 
 
 
+## todo
+
+    * Search by is name
+    * before any search is done show newly added stuffs
