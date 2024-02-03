@@ -49,27 +49,36 @@ async function search() {
 
     // Display results
     const results = filteredResults
-        .map(({ item }) => {
-            const island = item.island;
-            const islandData = item.data;
+    .map(({ item }) => {
+        const island = item.island;
+        const islandData = item.data;
 
-            const trades = islandData.trades
-                .filter(trade => normalizeString(trade.get).includes(itemToSearch) || normalizeString(trade.get) === normalizeString(itemToSearch))
-                .map(trade => `<span class="trade-info">${trade.villager_name} will sell you ${trade.receiveamount} ${trade.get} for ${trade.giveamount} ${trade.give} </span>`);
+        const trades = islandData.trades
+            .filter(trade => {
+                const normalizedGet = normalizeString(trade.get);
+                return normalizedGet.includes(itemToSearch) || normalizedGet === itemToSearch;
+            })
+            .map(trade => `<span class="trade-info">${trade.villager_name} will sell you ${trade.receiveamount} ${trade.get} for ${trade.giveamount} ${trade.give} </span>`);
 
+        const sells = islandData.sell
+            .filter(sell => {
+                const normalizedItemReceive = normalizeString(sell.itemrecieve);
+                return normalizedItemReceive.includes(itemToSearch) || normalizedItemReceive === itemToSearch;
+            })
+            .map(sell => `<span class="trade-info"><br>${island} will sell you ${sell.item} for ${sell.price} ${sell.itemrecieve}</span>`);
 
-            const sells = islandData.sell
-                .filter(sell => normalizeString(sell.itemrecieve).includes(itemToSearch) || normalizeString(sell.itemrecieve) === normalizeString(itemToSearch))
-                .map(sell => `<span class="trade-info"><br>${island} will sell you ${sell.item} for ${sell.price} ${sell.itemrecieve}</span>`);
+        const publicItems = islandData.publicItems
+            .filter(item => normalizeString(item).includes(itemToSearch) || normalizeString(item) === itemToSearch)
+            .map(item => `<span class="trade-info"><br>${item} is available for free</span>`);
 
-
-            const publicItems = islandData.publicItems
-                .filter(item => normalizeString(item).includes(itemToSearch) || normalizeString(item) === normalizeString(itemToSearch))
-                .map(item => `<span class="trade-info"><br>${item} is available for free</span>`);
-            
-
+        // Check if there are any matching item names before displaying the island name
+        if (trades.length > 0 || sells.length > 0 || publicItems.length > 0) {
             return `<div class="island-info"><h2>${island}</h2>${trades.join('<br> ')}<br>${sells.join('<br> ')}<br>${publicItems.join('<br> ')}</div>`;
-        });
+        } else {
+            return ''; // If no matching item names, return an empty string
+        }
+    });
+
 
     // Display search results
     resultsDiv.innerHTML = results.length === 0 ? '<p>No results found.</p>' : results.join('');
