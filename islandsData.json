@@ -294,6 +294,95 @@
             "get": "diamond pickaxe",
             "receiveamount": 1,
             "giveamount": 13
+        },{
+            "villager_name": "cleric",
+            "give": "Rotten Flesh",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 37
+        }
+        ,{
+            "villager_name": "cleric",
+            "give": "Gold Ingot",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 10
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Bottle o' Enchanting",
+            "receiveamount": 3,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Glowstone",
+            "receiveamount": 2,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Redstone",
+            "receiveamount": 1,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Lapis Lazuli",
+            "receiveamount": 1,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Bottle o' Enchanting",
+            "receiveamount": 1,
+            "giveamount": 9
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Glowstone",
+            "receiveamount": 2,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Redstone",
+            "receiveamount": 4,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Lapis Lazuli",
+            "receiveamount": 2,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Eye of Ender",
+            "receiveamount": 1,
+            "giveamount": 10
+        },
+        {
+            "villager_name": "cleric",
+            "give": "Emeralds",
+            "get": "Ender Pearl",
+            "receiveamount": 1,
+            "giveamount": 5},
+        {
+            "villager_name": "cleric",
+            "give": "Neather Wart",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 22
         }
 
 
