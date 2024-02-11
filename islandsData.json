@@ -1,70 +1,4 @@
 {
-    "island1": {
-        "publicItems": [ "Carrots", "potatoes" ],
-        "trades": [
-            {
-                "villager_name": "Farmer",
-                "give": "Carrots",
-                "get": "potatoes",
-                "receiveamount": 1,
-                "giveamount": 5
-            },
-            {
-                "villager_name": "bob",
-                "give": "potatoes",
-                "get": "Carrots",
-                "receiveamount": 1,
-                "giveamount": 5
-            }
-        ],
-        "sell": [
-            {
-                "item": "Carrots",
-                "itemrecieve": "potatoes",
-                "price": 1
-
-            },
-            {
-                "item": "potatoes",
-                "itemrecieve": "Carrots",
-                "price": 1
-
-            }
-        ]
-  },
-    "island2": {
-        "publicItems": [ "Carrots", "potatoes" ],
-        "trades": [
-            {
-                "villager_name": "Farmer",
-                "give": "Carrots",
-                "get": "potatoes",
-                "receiveamount": 1,
-                "giveamount": 5
-            },
-            {
-                "villager_name": "bob",
-                "give": "potatoes",
-                "get": "Carrots",
-                "receiveamount": 1,
-                "giveamount": 5
-            }
-        ],
-        "sell": [
-            {
-                "item": "Carrots",
-                "itemrecieve": "potatoes",
-                "price": 1
-
-            },
-            {
-                "item": "potatoes",
-                "itemrecieve": "Carrots",
-                "price": 1
-
-            }
-        ]
-  },
   "WorldIllustion": {
     "publicItems": [
       "Wood",
@@ -383,7 +317,99 @@
             "get": "Emeralds",
             "receiveamount": 1,
             "giveamount": 22
+        },
+        {
+            "villager_name": "famer",
+            "give": "wheat",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 20
+        },
+        {
+            "villager_name": "famer",
+            "give": "potato",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 18
+
         }
+        ,{
+            "villager_name": "famer",
+            "give": "carrot",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 15
+        },
+        {
+            "villager_name": "famer",
+            "give": "Emerald",
+            "get": "bread",
+            "receiveamount": 3,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "famer",
+            "give": "pumpkin",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 8
+        },
+        {
+            "villager_name": "famer",
+            "give": "Emerald",
+            "get": "pumpkin pie",
+            "receiveamount": 3,
+            "giveamount": 1
+        },{
+            "villager_name": "famer",
+            "give": "melon",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 11
+        },{
+            "villager_name": "famer",
+            "give": "Emerald",
+            "get": "apple",
+            "receiveamount": 7,
+            "giveamount": 1
+        },{
+            "villager_name": "famer",
+            "give": "Emerald",
+            "get": "cake",
+            "receiveamount": 1,
+            "giveamount": 1
+        },
+        {
+            "villager_name": "famer",
+            "give": "Emerald",
+            "get": "cookie",
+            "receiveamount": 18,
+            "giveamount": 3
+        },
+        {
+            "villager_name": "famer",
+            "give": "Emerald",
+            "get": "golden carrot",
+            "receiveamount": 3,
+            "giveamount": 3
+        },
+        {
+            "villager_name": "famer",
+            "give": "Emerald",
+            "get": "glistering melon",
+            "receiveamount": 3,
+            "giveamount": 4
+        },
+        {
+            "villager_name": "famer",
+            "give": "Beetroot",
+            "get": "Emeralds",
+            "receiveamount": 1,
+            "giveamount": 15
+
+        }
+
+
 
 
 
