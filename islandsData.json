@@ -37,7 +37,9 @@
     ]
   },
   "TallPup": {
-    "publicItems": [],
+    "publicItems": [
+      "Shulker Shells"
+    ],
     "trades": [
         {
             "villager_name": "Fletcher",
